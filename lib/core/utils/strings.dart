@@ -1,5 +1,4 @@
 class AppStrings {
-
   static String appLang = "ar";
   static String appTitle = "Logeste";
 

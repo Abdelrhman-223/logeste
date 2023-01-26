@@ -68,25 +68,34 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        (pageIndex < sliderPages.length)
-                            ? indicatorController.nextPage(
-                                duration: const Duration(milliseconds: 250),
-                                curve: Curves.easeIn)
-                            : Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const MyHomePage(),
-                                ));
-                      });
-                    },
-                    icon: SvgPicture.asset(
-                      IconPaths.rightArrow,
-                      color: AppColors.splashScreenBackgroundColor,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          (pageIndex < sliderPages.length)
+                              ? indicatorController.nextPage(
+                                  duration: const Duration(milliseconds: 250),
+                                  curve: Curves.easeIn)
+                              : Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const MyHomePage(),
+                                  ));
+                        });
+                      },
+                      icon: SvgPicture.asset(
+                        IconPaths.rightArrow,
+                        color: AppColors.splashScreenBackgroundColor,
+                      ),
                     ),
                   ),
                   Container(
@@ -104,19 +113,27 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       ),
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        indicatorController.previousPage(
-                            duration: const Duration(milliseconds: 250),
-                            curve: Curves.easeIn);
-                      });
-                    },
-                    icon: SvgPicture.asset(
-                      IconPaths.leftArrow,
-                      color: AppColors.splashScreenBackgroundColor,
-                    ),
-                  ),
+                  (pageIndex > 1)
+                      ? IconButton(
+                          onPressed: () {
+                            setState(() {
+                              indicatorController.previousPage(
+                                  duration: const Duration(milliseconds: 250),
+                                  curve: Curves.easeIn);
+                            });
+                          },
+                          icon: SvgPicture.asset(
+                            IconPaths.leftArrow,
+                            color: AppColors.splashScreenBackgroundColor,
+                          ),
+                        )
+                      : Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 18),
+                        child: SvgPicture.asset(
+                          IconPaths.leftArrow,
+                          color: Colors.transparent,
+                        ),
+                      ),
                 ],
               )
             ],

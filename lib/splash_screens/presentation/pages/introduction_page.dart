@@ -68,7 +68,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   IconButton(
                     onPressed: () {
@@ -104,19 +104,27 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       ),
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        indicatorController.previousPage(
-                            duration: const Duration(milliseconds: 250),
-                            curve: Curves.easeIn);
-                      });
-                    },
-                    icon: SvgPicture.asset(
-                      IconPaths.leftArrow,
-                      color: AppColors.splashScreenBackgroundColor,
-                    ),
-                  ),
+                  (pageIndex > 1)
+                      ? IconButton(
+                          onPressed: () {
+                            setState(() {
+                              indicatorController.previousPage(
+                                  duration: const Duration(milliseconds: 250),
+                                  curve: Curves.easeIn);
+                            });
+                          },
+                          icon: SvgPicture.asset(
+                            IconPaths.leftArrow,
+                            color: AppColors.splashScreenBackgroundColor,
+                          ),
+                        )
+                      : Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 18),
+                        child: SvgPicture.asset(
+                          IconPaths.leftArrow,
+                          color: Colors.transparent,
+                        ),
+                      ),
                 ],
               )
             ],

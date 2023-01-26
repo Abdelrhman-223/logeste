@@ -5,5 +5,6 @@ class AppStrings {
 
   // Splash screens texts.
   static String welcomeText = "Welcome to Logeste";
+  static String welcomeToText = "Welcome to Logeste";
 
 }

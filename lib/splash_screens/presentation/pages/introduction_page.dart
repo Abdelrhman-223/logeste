@@ -98,19 +98,16 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    alignment: const Alignment(0, 0.6),
-                    child: SmoothPageIndicator(
-                      controller: indicatorController,
-                      count: sliderPages.length,
-                      textDirection: TextDirection.ltr,
-                      effect: const ScrollingDotsEffect(
-                        activeDotColor: Colors.black,
-                        dotColor: Colors.black12,
-                        dotWidth: 10,
-                        dotHeight: 10,
-                        activeDotScale: 1.5,
-                      ),
+                  SmoothPageIndicator(
+                    controller: indicatorController,
+                    count: sliderPages.length,
+                    textDirection: TextDirection.ltr,
+                    effect: const ScrollingDotsEffect(
+                      activeDotColor: Colors.black,
+                      dotColor: Colors.black12,
+                      dotWidth: 10,
+                      dotHeight: 10,
+                      activeDotScale: 1.5,
                     ),
                   ),
                   (pageIndex > 1)

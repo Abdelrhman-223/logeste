@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:logeste/core/utils/colors.dart';
+import 'package:logeste/core/utils/fonts.dart';
 
 import '../../../core/utils/images.dart';
 
@@ -26,7 +28,8 @@ class _SliderContentState extends State<SliderContent> {
           widget.description,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 20,
+            color: AppColors.introPageTextColor,
+            fontSize: AppFonts.myH6,
           ),
         ),
       ],

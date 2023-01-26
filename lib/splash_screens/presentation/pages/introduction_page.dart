@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:logeste/core/utils/colors.dart';
+import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/icons.dart';
 import 'package:logeste/core/utils/images.dart';
 import 'package:logeste/core/utils/strings.dart';
@@ -21,24 +22,22 @@ class _IntroductionPageState extends State<IntroductionPage> {
   List<Widget> sliderPages = [
     SliderContent(
       imgPath: ImagePaths.deliverySvg,
-      description:
-          "Splash Title Splash Title Splash Title Splash  Splash Title",
+      description: AppStrings.deliveryDescription,
     ),
     SliderContent(
       imgPath: ImagePaths.orderFoodSvg,
-      description:
-          "Splash Title Splash Title Splash Title Splash  Splash Title",
+      description: AppStrings.orderDescription,
     ),
     SliderContent(
       imgPath: ImagePaths.pickLocationSvg,
-      description:
-          "Splash Title Splash Title Splash Title Splash  Splash Title",
+      description: AppStrings.pickDescription,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.introPageBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -47,33 +46,35 @@ class _IntroductionPageState extends State<IntroductionPage> {
             children: [
               Text(
                 AppStrings.welcomeText,
-                textAlign: TextAlign.end,
-                style: const TextStyle(
-                  fontSize: 50,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: AppFonts.myH1,
                   fontWeight: FontWeight.bold,
+                  color: AppColors.introPageTextColor,
                 ),
               ),
               SizedBox(
                 height: 450,
                 child: PageView(
-                  controller: indicatorController,
                   reverse: true,
-                  children: sliderPages,
+                  controller: indicatorController,
                   onPageChanged: (index) {
                     setState(() {
                       //add 1 on index to make navigator work.
                       pageIndex = index + 1;
                     });
                   },
+                  children: sliderPages,
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  //Next page Arrow
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Colors.black,
+                        color: AppColors.introPageIconsColor,
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(50),
@@ -94,7 +95,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       },
                       icon: SvgPicture.asset(
                         IconPaths.rightArrow,
-                        color: AppColors.splashScreenBackgroundColor,
+                        color: AppColors.introPageIconsColor,
                       ),
                     ),
                   ),
@@ -102,9 +103,9 @@ class _IntroductionPageState extends State<IntroductionPage> {
                     controller: indicatorController,
                     count: sliderPages.length,
                     textDirection: TextDirection.ltr,
-                    effect: const ScrollingDotsEffect(
-                      activeDotColor: Colors.black,
-                      dotColor: Colors.black12,
+                    effect: ScrollingDotsEffect(
+                      activeDotColor: AppColors.introPageIconsColor,
+                      dotColor: AppColors.introPageIconsColor.withAlpha(50),
                       dotWidth: 10,
                       dotHeight: 10,
                       activeDotScale: 1.5,
@@ -121,16 +122,16 @@ class _IntroductionPageState extends State<IntroductionPage> {
                           },
                           icon: SvgPicture.asset(
                             IconPaths.leftArrow,
-                            color: AppColors.splashScreenBackgroundColor,
+                            color: AppColors.introPageIconsColor,
                           ),
                         )
                       : Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 18),
-                        child: SvgPicture.asset(
-                          IconPaths.leftArrow,
-                          color: Colors.transparent,
+                          padding: const EdgeInsets.symmetric(horizontal: 18),
+                          child: SvgPicture.asset(
+                            IconPaths.leftArrow,
+                            color: Colors.transparent,
+                          ),
                         ),
-                      ),
                 ],
               )
             ],

@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         Locale(AppStrings.appLang),
       ],
+      theme: ThemeData(
+        fontFamily: "Cairo",
+      ),
       home: const SplashScreen(),
     );
   }

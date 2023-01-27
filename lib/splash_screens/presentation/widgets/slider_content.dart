@@ -3,8 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/fonts.dart';
 
-import '../../../core/utils/images.dart';
-
 class SliderContent extends StatefulWidget {
   final String imgPath, description;
 

@@ -8,6 +8,7 @@ class AppFonts {
   static double myH4 = 30;
   static double myH5 = 25;
   static double myH6 = 20;
+  static double myH7 = 16;
   static double myP = 18;
 
 }

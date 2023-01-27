@@ -9,6 +9,15 @@ class IconPaths {
   static String shipmentsOutline = "assets/icons/shipments_outline.svg";
   static String shoppingBagOutline = "assets/icons/shopping_bag_outline.svg";
   static String billsOutline = "assets/icons/bills_outline.svg";
-  //String  = "assets/icons/.svg";
+  static String eye = "assets/icons/eye.svg";
+  static String eyeSlash = "assets/icons/eye_slash.svg";
+  static String checkmarkCircle = "assets/icons/checkmark_circle.svg";
+  static String cloudUpload = "assets/icons/cloud_upload.svg";
+  static String email = "assets/icons/email.svg";
+  static String profileOutline = "assets/icons/profile_outline.svg";
+  static String lockLinear = "assets/icons/lock_linear.svg";
+  static String callTwoTone = "assets/icons/call_twotone.svg";
+  static String buildings = "assets/icons/buildings.svg";
+  //static String  = "assets/icons/.svg";
 
 }

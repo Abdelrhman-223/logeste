@@ -5,9 +5,11 @@ import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/icons.dart';
 import 'package:logeste/core/utils/images.dart';
 import 'package:logeste/core/utils/strings.dart';
-import 'package:logeste/home_page.dart';
+import 'package:logeste/login/presentation/pages/login_page.dart';
 import 'package:logeste/splash_screens/presentation/widgets/slider_content.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../core/widget/app_scaffold.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({Key? key}) : super(key: key);
@@ -36,8 +38,8 @@ class _IntroductionPageState extends State<IntroductionPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.introPageBackgroundColor,
+    return AppScaffold(
+      isDrawer: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -86,10 +88,10 @@ class _IntroductionPageState extends State<IntroductionPage> {
                               ? indicatorController.nextPage(
                                   duration: const Duration(milliseconds: 250),
                                   curve: Curves.easeIn)
-                              : Navigator.pushReplacement(
+                              : Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const MyHomePage(),
+                                    builder: (context) => LoginPage(),
                                   ));
                         });
                       },

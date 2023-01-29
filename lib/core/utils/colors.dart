@@ -20,6 +20,7 @@ class AppColors {
   static Color appTextColorWhite = const Color.fromRGBO(255, 255, 255, 1);
   static Color appTextSecondColor = const Color.fromRGBO(148, 150, 153, 1);
   static Color appTextThirdColor = const Color.fromRGBO(108, 108, 108, 1);
+  static Color appTextRedColor = const Color.fromRGBO(220, 54, 46, 1);
   static Color appTextOrangeColor = const Color.fromRGBO(246, 125, 49, 1);
   static Color appTextLittleRedColor = const Color.fromRGBO(235, 87, 87, 1);
 

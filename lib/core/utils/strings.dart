@@ -46,4 +46,19 @@ class AppStrings {
   static String uploadFinishedImageText3 = "تم رفع صورة البطاقة الشخصية";
   static String uploadImageText4 = "اضغط لرفع صحيفة الأحوال الجنائية";
   static String uploadFinishedImageText4 = "تم رفع صحيفة الأحوال الجنائية";
+
+  //Forget password page strings
+  static String forgetPassAppbarTitle = "هل نسيت كلمة السر ؟";
+  static String forgetPassPageButtonText = "تأكيد";
+
+  static String enterPhonePageTitle = "قم بإدخال رقم الهاتف المسجل لاستعادة حسابك";
+
+  static String enterPinCodePageTitle = "قم بإدخال الرمز لإستعادة حسابك";
+  static String enterPinCodePageSubTitle = "تم ارسال رسالة نصية لرقم هاتفك المسجل";
+  static String enterPinCodeResendText = "إعادة إرسال";
+
+  static String newPasswordPageTitle = "تم استرجاع حسابك قم بتعيين كلمة سر جديدة";
+  static String newPasswordFieldHint = "كلمة السر الجديدة";
+  static String repeatNewPasswordFieldHint = "تأكيد كلمة السر الجديدة";
+  static String passwordsNotMatches = "الكلمات غير متطابقة, قم بكتابتها جيداً";
 }

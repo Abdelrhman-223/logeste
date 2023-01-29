@@ -18,8 +18,8 @@ class SignUpTabPage extends StatefulWidget {
 }
 
 class _SignUpTabPageState extends State<SignUpTabPage> {
-  String buttonText = AppStrings.signUpNextPageButtonText;
-  String radioGroup = AppStrings.radioStrings[0];
+  String buttonText = AppStrings.signUpPageButtonText;
+  String radioGroup = AppStrings.radioStrings[1];
 
   TextEditingController userNameController = TextEditingController();
 
@@ -79,40 +79,39 @@ class _SignUpTabPageState extends State<SignUpTabPage> {
               iconPath: IconPaths.lockLinear,
               isPasswordField: true,
             ),
-            (widget.isCaptain)
-                ? Row(
-                    children: [
-                      Radio(
-                        activeColor: AppColors.appIconGreyColor,
-                        value: AppStrings.radioStrings[0],
-                        groupValue: radioGroup,
-                        onChanged: (value) {
-                          setState(() {
-                            radioGroup = value!;
-                            buttonText = AppStrings.signUpNextPageButtonText;
-                          });
-                        },
-                      ),
-                      Text(
-                        AppStrings.radioStrings[0],
-                      ),
-                      Radio(
-                        activeColor: AppColors.appIconGreyColor,
-                        value: AppStrings.radioStrings[1],
-                        groupValue: radioGroup,
-                        onChanged: (value) {
-                          setState(() {
-                            radioGroup = value!;
-                            buttonText = AppStrings.signUpPageButtonText;
-                          });
-                        },
-                      ),
-                      Text(
-                        AppStrings.radioStrings[1],
-                      ),
-                    ],
-                  )
-                : const SizedBox(),
+            if (widget.isCaptain)
+              Row(
+                children: [
+                  Radio(
+                    activeColor: AppColors.appIconGreyColor,
+                    value: AppStrings.radioStrings[0],
+                    groupValue: radioGroup,
+                    onChanged: (value) {
+                      setState(() {
+                        radioGroup = value!;
+                        buttonText = AppStrings.signUpNextPageButtonText;
+                      });
+                    },
+                  ),
+                  Text(
+                    AppStrings.radioStrings[0],
+                  ),
+                  Radio(
+                    activeColor: AppColors.appIconGreyColor,
+                    value: AppStrings.radioStrings[1],
+                    groupValue: radioGroup,
+                    onChanged: (value) {
+                      setState(() {
+                        radioGroup = value!;
+                        buttonText = AppStrings.signUpPageButtonText;
+                      });
+                    },
+                  ),
+                  Text(
+                    AppStrings.radioStrings[1],
+                  ),
+                ],
+              ),
           ],
         ),
         Column(
@@ -122,7 +121,11 @@ class _SignUpTabPageState extends State<SignUpTabPage> {
               buttonColor: AppColors.appIconsColor,
               buttonFunc: () {
                 if (buttonText == AppStrings.signUpNextPageButtonText) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const FinishCaptainSigning(),));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FinishCaptainSigning(),
+                      ));
                 } else {
                   // Do what you want if he is Captain without car.
                   print("I am Captain without car");

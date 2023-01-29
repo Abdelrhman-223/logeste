@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Cairo",
       ),
+      debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
     );
   }

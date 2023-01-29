@@ -20,7 +20,7 @@ class IntroductionPage extends StatefulWidget {
 
 class _IntroductionPageState extends State<IntroductionPage> {
   int pageIndex = 1;
-  PageController indicatorController = PageController();
+  PageController pageController = PageController();
   List<Widget> sliderPages = [
     SliderContent(
       imgPath: ImagePaths.deliverySvg,
@@ -59,7 +59,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 height: 450,
                 child: PageView(
                   reverse: true,
-                  controller: indicatorController,
+                  controller: pageController,
                   onPageChanged: (index) {
                     setState(() {
                       //add 1 on index to make navigator work.
@@ -85,7 +85,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       onPressed: () {
                         setState(() {
                           (pageIndex < sliderPages.length)
-                              ? indicatorController.nextPage(
+                              ? pageController.nextPage(
                                   duration: const Duration(milliseconds: 250),
                                   curve: Curves.easeIn)
                               : Navigator.push(
@@ -102,7 +102,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                     ),
                   ),
                   SmoothPageIndicator(
-                    controller: indicatorController,
+                    controller: pageController,
                     count: sliderPages.length,
                     textDirection: TextDirection.ltr,
                     effect: ScrollingDotsEffect(
@@ -117,7 +117,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       ? IconButton(
                           onPressed: () {
                             setState(() {
-                              indicatorController.previousPage(
+                              pageController.previousPage(
                                   duration: const Duration(milliseconds: 250),
                                   curve: Curves.easeIn);
                             });

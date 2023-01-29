@@ -16,7 +16,7 @@ class FinishCaptainSigning extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       isDrawer: false,
-      appBar: loginAppBar(),
+      appBar: loginAppBar(AppStrings.loginAppBarTitle),
       body: Center(
         child: Column(
           children: [

@@ -26,7 +26,7 @@ class SignUpPage extends StatelessWidget {
       initialIndex: initTap,
       child: AppScaffold(
         isDrawer: false,
-        appBar: loginAppBar(),
+        appBar: loginAppBar(AppStrings.loginAppBarTitle),
         body: Center(
           child: Column(
             children: [

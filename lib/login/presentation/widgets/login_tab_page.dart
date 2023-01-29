@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logeste/login/presentation/pages/forget_password_page.dart';
 import 'package:logeste/login/presentation/pages/sign_up_page.dart';
 
 import '../../../core/components/custom_button.dart';
@@ -38,6 +39,7 @@ class LoginTabPage extends StatelessWidget {
             InkWell(
               onTap: () {
                 print("Goto Forget password page");
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPasswordPage(),));
               },
               hoverColor: AppColors.appTextOrangeColor,
               child: Text(
@@ -49,7 +51,7 @@ class LoginTabPage extends StatelessWidget {
             ),
           ],
         ),
-        Column(
+        /*Column(
           children: [
             CustomButton(
               buttonText: AppStrings.loginPageButtonText,
@@ -107,7 +109,7 @@ class LoginTabPage extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        ),*/
       ],
     );
   }

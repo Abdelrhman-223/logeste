@@ -11,8 +11,8 @@ import '../widgets/sign_up_tab_page.dart';
 // ignore: must_be_immutable
 class SignUpPage extends StatelessWidget {
   final int initTap;
-  SignUpPage({Key? key, required this.initTap}) : super(key: key);
 
+  SignUpPage({Key? key, required this.initTap}) : super(key: key);
 
   final List<Widget> tapsText = [
     TabBarText(text: AppStrings.loginPageTabBarTitle1),
@@ -26,13 +26,16 @@ class SignUpPage extends StatelessWidget {
       initialIndex: initTap,
       child: AppScaffold(
         isDrawer: false,
-        appBar: loginAppBar(AppStrings.loginAppBarTitle),
+        appBar: loginAppBar(
+          AppStrings.loginAppBarTitle,
+          AppColors.appBackgroundColor,
+        ),
         body: Center(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Text(
                   AppStrings.signUpPageTitle,
                   style: TextStyle(

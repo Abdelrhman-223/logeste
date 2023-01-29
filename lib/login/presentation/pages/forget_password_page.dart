@@ -17,15 +17,51 @@ class ForgetPasswordPage extends StatelessWidget {
     EnterPinCode(),
     NewPassword(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
       isDrawer: false,
-      appBar: loginAppBar(AppStrings.forgetPassAppbarTitle),
-      body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: pageController,
-        children: pages,
+      appBar: loginAppBar(
+        AppStrings.forgetPassAppbarTitle,
+        AppColors.loginTabsBackgroundColor,
+      ),
+      backgroundColor: AppColors.loginTabsBackgroundColor,
+      body: Column(
+        children: [
+          Expanded(
+            flex: 3,
+            child: PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: pageController,
+              children: pages,
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 20),
+              child: CustomButton(
+                buttonText: AppStrings.forgetPassPageButtonText,
+                buttonColor: AppColors.appIconsColor,
+                buttonFunc: () {
+                  if (pageController.page == 0) {
+                    print("From Enter Phone Number Page");
+                  } else if (pageController.page == 1) {
+                    print("From Enter Pin code Page");
+                  } else {
+                    print("From Enter New Password Page");
+                  }
+                  pageController.nextPage(
+                    duration: const Duration(microseconds: 100),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                buttonTextColor: AppColors.appTextColorWhite,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

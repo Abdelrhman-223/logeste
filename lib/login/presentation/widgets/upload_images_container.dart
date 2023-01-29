@@ -20,6 +20,7 @@ class UploadImagesContainer extends StatefulWidget {
 }
 
 class _UploadImagesContainerState extends State<UploadImagesContainer> {
+  double imageSize = 35;
   String iconPath = IconPaths.cloudUpload;
 
   @override
@@ -29,7 +30,7 @@ class _UploadImagesContainerState extends State<UploadImagesContainer> {
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(vertical: 10),
-        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         decoration: BoxDecoration(
           color: AppColors.appTextFieldBackgroundColor,
           borderRadius: BorderRadius.circular(10),
@@ -37,22 +38,29 @@ class _UploadImagesContainerState extends State<UploadImagesContainer> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if (widget.hasImg)
-              GestureDetector(
-                onTap: (){},
-                child: Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: AppColors.appIconGreyColor,
-                    borderRadius: BorderRadius.circular(10),
+            Row(
+              children: [
+                if (widget.hasImg)
+                  GestureDetector(
+                    onTap: (){},
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Container(
+                        width: imageSize,
+                        height: imageSize,
+                        decoration: BoxDecoration(
+                          color: AppColors.appIconGreyColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
                   ),
+                Text(
+                  (widget.hasImg)
+                      ? widget.containerFinishingText
+                      : widget.containerText,
                 ),
-              ),
-            Text(
-              (widget.hasImg)
-                  ? widget.containerFinishingText
-                  : widget.containerText,
+              ],
             ),
             SvgPicture.asset(
               (widget.hasImg)

@@ -34,13 +34,16 @@ class LoginPage extends StatelessWidget {
       initialIndex: 0,
       child: AppScaffold(
         isDrawer: false,
-        appBar: loginAppBar(AppStrings.loginAppBarTitle),
+        appBar: loginAppBar(
+          AppStrings.loginAppBarTitle,
+          AppColors.appBackgroundColor,
+        ),
         body: Center(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                 child: Text(
                   AppStrings.loginPageTitle,
                   style: TextStyle(
@@ -56,7 +59,7 @@ class LoginPage extends StatelessWidget {
                 labelColor: AppColors.appTextColorBlack,
                 unselectedLabelColor: AppColors.appTextSecondColor,
                 tabs: tapsText,
-                onTap: (index){
+                onTap: (index) {
                   tabIndex = index;
                 },
               ),
@@ -91,7 +94,11 @@ class LoginPage extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             print("Goto Forget password page");
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPasswordPage(),));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ForgetPasswordPage(),
+                                ));
                           },
                           hoverColor: AppColors.appTextOrangeColor,
                           child: Text(

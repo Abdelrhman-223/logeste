@@ -16,7 +16,10 @@ class FinishCaptainSigning extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       isDrawer: false,
-      appBar: loginAppBar(AppStrings.loginAppBarTitle),
+      appBar: loginAppBar(
+        AppStrings.loginAppBarTitle,
+        AppColors.appBackgroundColor,
+      ),
       body: Center(
         child: Column(
           children: [
@@ -54,21 +57,25 @@ class FinishCaptainSigning extends StatelessWidget {
                     children: [
                       UploadImagesContainer(
                         containerText: AppStrings.uploadImageText1,
-                        containerFinishingText: AppStrings.uploadFinishedImageText1,
+                        containerFinishingText:
+                            AppStrings.uploadFinishedImageText1,
                         // hasImg: true,
                       ),
                       UploadImagesContainer(
                         containerText: AppStrings.uploadImageText2,
-                        containerFinishingText: AppStrings.uploadFinishedImageText4,
+                        containerFinishingText:
+                            AppStrings.uploadFinishedImageText4,
                       ),
                       UploadImagesContainer(
                         containerText: AppStrings.uploadImageText3,
-                        containerFinishingText: AppStrings.uploadFinishedImageText4,
+                        containerFinishingText:
+                            AppStrings.uploadFinishedImageText4,
                         hasImg: true,
                       ),
                       UploadImagesContainer(
                         containerText: AppStrings.uploadImageText4,
-                        containerFinishingText: AppStrings.uploadFinishedImageText4,
+                        containerFinishingText:
+                            AppStrings.uploadFinishedImageText4,
                       ),
                     ],
                   ),

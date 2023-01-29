@@ -18,22 +18,25 @@ class EnterPhoneNumber extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-          child: Text(
-            AppStrings.enterPhonePageTitle,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppColors.appTextColorBlack,
-              fontSize: AppFonts.myH5,
-              fontWeight: FontWeight.w600,
+        Container(
+          color: AppColors.loginTabsBackgroundColor,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+            child: Text(
+              AppStrings.enterPhonePageTitle,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: AppColors.appTextColorBlack,
+                fontSize: AppFonts.myH5,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           color: AppColors.loginTabsBackgroundColor,
-          height: 580,
+          //height: 580,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +47,7 @@ class EnterPhoneNumber extends StatelessWidget {
                 iconPath: IconPaths.callTwoTone,
                 isPhoneField: true,
               ),
-              Padding(
+              /*Padding(
                 padding: const EdgeInsets.only(bottom: 50),
                 child: CustomButton(
                   buttonText: AppStrings.forgetPassPageButtonText,
@@ -52,7 +55,7 @@ class EnterPhoneNumber extends StatelessWidget {
                   buttonFunc: () {},
                   buttonTextColor: AppColors.appTextColorWhite,
                 ),
-              ),
+              ),*/
             ],
           ),
         )

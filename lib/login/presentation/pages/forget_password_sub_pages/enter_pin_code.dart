@@ -16,36 +16,39 @@ class EnterPinCode extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 18.5, horizontal: 25),
-          child: Column(
-            children: [
-              Text(
-                AppStrings.enterPinCodePageTitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AppColors.appTextColorBlack,
-                  fontSize: AppFonts.myH5,
-                  fontWeight: FontWeight.w600,
+        Container(
+          //color: AppColors.loginTabsBackgroundColor,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 18.5, horizontal: 25),
+            child: Column(
+              children: [
+                Text(
+                  AppStrings.enterPinCodePageTitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: AppColors.appTextColorBlack,
+                    fontSize: AppFonts.myH5,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              Text(
-                AppStrings.enterPinCodePageSubTitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AppColors.appTextSecondColor,
-                  fontSize: AppFonts.myH7,
-                  fontWeight: FontWeight.w600,
+                Text(
+                  AppStrings.enterPinCodePageSubTitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: AppColors.appTextSecondColor,
+                    fontSize: AppFonts.myH7,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           color: AppColors.loginTabsBackgroundColor,
           width: double.infinity,
-          constraints: const BoxConstraints.expand(height: 580),
+          //height: 580,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -94,7 +97,7 @@ class EnterPinCode extends StatelessWidget {
                   ),
                 ],
               ),
-              Padding(
+              /*Padding(
                 padding: const EdgeInsets.only(bottom: 50),
                 child: CustomButton(
                   buttonText: AppStrings.forgetPassPageButtonText,
@@ -108,7 +111,7 @@ class EnterPinCode extends StatelessWidget {
                   },
                   buttonTextColor: AppColors.appTextColorWhite,
                 ),
-              ),
+              ),*/
             ],
           ),
         )

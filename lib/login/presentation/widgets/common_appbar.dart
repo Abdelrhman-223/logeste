@@ -4,7 +4,7 @@ import '../../../core/utils/colors.dart';
 import '../../../core/utils/fonts.dart';
 import '../../../core/utils/strings.dart';
 
-PreferredSizeWidget loginAppBar(String title) {
+PreferredSizeWidget loginAppBar(String title, Color appbarColor) {
     return AppBar(
       centerTitle: true,
       iconTheme: IconThemeData(color: AppColors.appIconsColor),
@@ -15,7 +15,7 @@ PreferredSizeWidget loginAppBar(String title) {
         fontWeight: FontWeight.w600,
         fontFamily: AppFonts.appFontFamily,
       ),
-      backgroundColor: AppColors.appBackgroundColor,
+      backgroundColor: appbarColor,
       shadowColor: Colors.transparent,
     );
   }

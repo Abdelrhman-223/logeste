@@ -9,31 +9,34 @@ class AppScaffold extends StatelessWidget {
   final bool? isDrawer;
   final PreferredSizeWidget? appBar;
   final Color? backgroundAppBar;
+  final Color? backgroundColor;
   final Widget? bottomSheet;
   final Widget? bottomNavigationBar;
 
-  const AppScaffold(
-      {Key? key,
-      this.title,
-      required this.body,
-      this.floatingActionButton,
-      this.isDrawer = true,
-      this.appBar,
-      this.backgroundAppBar,
-      this.bottomSheet,
-      this.bottomNavigationBar})
-      : super(key: key);
+  const AppScaffold({
+    Key? key,
+    this.title,
+    required this.body,
+    this.floatingActionButton,
+    this.isDrawer = true,
+    this.appBar,
+    this.backgroundAppBar,
+    this.bottomSheet,
+    this.bottomNavigationBar,
+    this.backgroundColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false, // this code remove the keyboard overflow.
+      resizeToAvoidBottomInset: false,
+      // this code remove the keyboard overflow.
       drawer: isDrawer! ? const CommonDrawer() : null,
       //SafeArea to save content from the phone top par.
       body: SafeArea(
         child: body,
       ),
-      backgroundColor: AppColors.appBackgroundColor,
+      backgroundColor: backgroundColor ?? AppColors.appBackgroundColor,
       floatingActionButton: floatingActionButton,
       bottomSheet: bottomSheet,
       bottomNavigationBar: bottomNavigationBar,

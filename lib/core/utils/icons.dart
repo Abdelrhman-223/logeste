@@ -6,7 +6,7 @@ class IconPaths {
   static String menuOutline = "assets/icons/menu_outline.svg";
   static String notificationOutlineNotification = "assets/icons/notification_outline_notification.svg";
   static String eyeScanTwoTone = "assets/icons/eye_scan_twotone.svg";
-  static String shipmentsOutline = "assets/icons/shipments_outline.svg";
+  static String shipments = "assets/icons/shipments.svg";
   static String shoppingBagOutline = "assets/icons/shopping_bag_outline.svg";
   static String billsOutline = "assets/icons/bills_outline.svg";
   static String eye = "assets/icons/eye.svg";
@@ -18,6 +18,15 @@ class IconPaths {
   static String lockLinear = "assets/icons/lock_linear.svg";
   static String callTwoTone = "assets/icons/call_twotone.svg";
   static String buildings = "assets/icons/buildings.svg";
+  static String cross = "assets/icons/cross.svg";
+  static String logout = "assets/icons/logout.svg";
+  static String aboutUs = "assets/icons/about_us.svg";
+  static String settings = "assets/icons/settings.svg";
+  static String wallet = "assets/icons/wallet.svg";
+  static String shoppingBag = "assets/icons/shopping_bag.svg";
+  static String operations = "assets/icons/operations.svg";
+  static String star = "assets/icons/star.svg";
+  static String profile2User = "assets/icons/profile_2user.svg";
   //static String  = "assets/icons/.svg";
 
 }

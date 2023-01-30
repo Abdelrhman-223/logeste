@@ -6,7 +6,7 @@ import '../../../core/components/custom_button.dart';
 import '../../../core/utils/colors.dart';
 import '../../../core/utils/strings.dart';
 import '../../../core/widget/app_scaffold.dart';
-import '../widgets/common_appbar.dart';
+import '../../../core/widget/common_appbar.dart';
 import 'forget_password_sub_pages/enter_pin_code.dart';
 
 class ForgetPasswordPage extends StatelessWidget {
@@ -22,9 +22,10 @@ class ForgetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       isDrawer: false,
-      appBar: loginAppBar(
+      appBar: commonAppBar(
         AppStrings.forgetPassAppbarTitle,
         AppColors.loginTabsBackgroundColor,
+        AppColors.appTextColorBlack,
       ),
       backgroundColor: AppColors.loginTabsBackgroundColor,
       body: Column(

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/strings.dart';
+import 'package:logeste/home_page/presentation/pages/home_page.dart';
 import 'package:logeste/login/presentation/pages/sign_up_page.dart';
-import 'package:logeste/login/presentation/widgets/common_appbar.dart';
+import 'package:logeste/core/widget/common_appbar.dart';
 import 'package:logeste/login/presentation/widgets/tab_bar_text.dart';
 
 import '../../../core/components/custom_button.dart';
@@ -34,9 +35,10 @@ class LoginPage extends StatelessWidget {
       initialIndex: 0,
       child: AppScaffold(
         isDrawer: false,
-        appBar: loginAppBar(
+        appBar: commonAppBar(
           AppStrings.loginAppBarTitle,
           AppColors.appBackgroundColor,
+          AppColors.appTextColorBlack,
         ),
         body: Center(
           child: Column(
@@ -119,9 +121,23 @@ class LoginPage extends StatelessWidget {
                             if (tabIndex == 0) {
                               // Do what you want if he is CAPTAIN.
                               print("I am Captain");
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const HomePage(isCaptain: true),
+                                ),
+                              );
                             } else {
                               // Do what you want if he is AGENT.
                               print("I am Agent");
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const HomePage(isCaptain: false),
+                                ),
+                              );
                             }
                           },
                           buttonTextColor: AppColors.appTextColorWhite,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/strings.dart';
-import 'package:logeste/login/presentation/widgets/common_appbar.dart';
+import 'package:logeste/core/widget/common_appbar.dart';
 import 'package:logeste/login/presentation/widgets/tab_bar_text.dart';
 
 import '../../../core/widget/app_scaffold.dart';
@@ -26,9 +26,10 @@ class SignUpPage extends StatelessWidget {
       initialIndex: initTap,
       child: AppScaffold(
         isDrawer: false,
-        appBar: loginAppBar(
+        appBar: commonAppBar(
           AppStrings.loginAppBarTitle,
           AppColors.appBackgroundColor,
+          AppColors.appTextColorBlack,
         ),
         body: Center(
           child: Column(

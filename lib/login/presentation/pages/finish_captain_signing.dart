@@ -6,7 +6,7 @@ import '../../../core/utils/colors.dart';
 import '../../../core/utils/fonts.dart';
 import '../../../core/utils/strings.dart';
 import '../../../core/widget/app_scaffold.dart';
-import '../widgets/common_appbar.dart';
+import '../../../core/widget/common_appbar.dart';
 import '../widgets/tab_bar_text.dart';
 
 class FinishCaptainSigning extends StatelessWidget {
@@ -16,9 +16,10 @@ class FinishCaptainSigning extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       isDrawer: false,
-      appBar: loginAppBar(
+      appBar: commonAppBar(
         AppStrings.loginAppBarTitle,
         AppColors.appBackgroundColor,
+        AppColors.appTextColorBlack,
       ),
       body: Center(
         child: Column(

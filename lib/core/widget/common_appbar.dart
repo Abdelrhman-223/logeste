@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/colors.dart';
-import '../../../core/utils/fonts.dart';
-import '../../../core/utils/strings.dart';
+import '../utils/fonts.dart';
 
-PreferredSizeWidget loginAppBar(String title, Color appbarColor) {
+PreferredSizeWidget commonAppBar(String title, Color appbarColor, Color appbarTitleColor) {
     return AppBar(
       centerTitle: true,
-      iconTheme: IconThemeData(color: AppColors.appIconsColor),
+      iconTheme: IconThemeData(color: appbarTitleColor),
       title: Text(title),
       titleTextStyle: TextStyle(
-        color: AppColors.appTextColorBlack,
+        color: appbarTitleColor,
         fontSize: AppFonts.myH7,
         fontWeight: FontWeight.w600,
         fontFamily: AppFonts.appFontFamily,

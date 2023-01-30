@@ -61,4 +61,20 @@ class AppStrings {
   static String newPasswordFieldHint = "كلمة السر الجديدة";
   static String repeatNewPasswordFieldHint = "تأكيد كلمة السر الجديدة";
   static String passwordsNotMatches = "الكلمات غير متطابقة, قم بكتابتها جيداً";
+
+  // Side Menu Strings.
+  static String tileTitleShipments = "الشحنات";
+  static String tileTitleOperations = "العمليات";
+  static String tileTitleShoppingBagOutline = "البيك أب";
+  static String tileTitleBillsOutline = "الفواتير";
+  static String tileTitleWallet = "المحفظة";
+  static String tileTitleNotificationOutlineNotification = "الاشعارات";
+  static String tileTitleEyeScanTwoTone = "الشكاوى";
+  static String tileTitleSettings = "الاعدادات";
+  static String tileTitleAboutUs = "عن لوجيستي";
+  static String tileTitleLogout = "تسجيل الخروج";
+  static String tileTitleCaptain = "الكباتن";
+
+
+  // static String  = "";
 }

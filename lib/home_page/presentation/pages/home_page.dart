@@ -8,6 +8,7 @@ import 'package:logeste/core/widget/common_appbar.dart';
 
 class HomePage extends StatefulWidget {
   final bool isCaptain;
+
   const HomePage({super.key, required this.isCaptain});
 
   @override
@@ -15,11 +16,31 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool userConnected = true;
+
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
       isCaptain: widget.isCaptain,
-      appBar: commonAppBar("الصفحة الرئيسية", AppColors.appBackgroundColorBlack, AppColors.appTextColorWhite),
+      appBar: commonAppBar(
+          title: AppStrings.homePageTitle +
+              ((userConnected)
+                  ? AppStrings.homePageUserConnected
+                  : AppStrings.homePageUserNotConnected),
+          appbarColor: AppColors.appBackgroundColorBlack,
+          appbarTitleColor: AppColors.appTextColorWhite,
+          appbarActions: [
+            IconButton(
+              icon: SvgPicture.asset(IconPaths.eyeScanTwoTone),
+              onPressed: () {},
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: SvgPicture.asset(
+                (userConnected) ? IconPaths.toggleOn : IconPaths.toggleOff,
+              ),
+            ),
+          ]),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

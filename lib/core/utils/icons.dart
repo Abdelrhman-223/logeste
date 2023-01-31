@@ -1,10 +1,10 @@
 class IconPaths {
-
   static String directArrow = "assets/icons/direct_arrow.svg";
   static String rightArrow = "assets/icons/right_arrow.svg";
   static String leftArrow = "assets/icons/left_arrow.svg";
   static String menuOutline = "assets/icons/menu_outline.svg";
-  static String notificationOutlineNotification = "assets/icons/notification_outline_notification.svg";
+  static String notificationOutlineNotification =
+      "assets/icons/notification_outline_notification.svg";
   static String eyeScanTwoTone = "assets/icons/eye_scan_twotone.svg";
   static String shipments = "assets/icons/shipments.svg";
   static String shoppingBagOutline = "assets/icons/shopping_bag_outline.svg";
@@ -27,6 +27,8 @@ class IconPaths {
   static String operations = "assets/icons/operations.svg";
   static String star = "assets/icons/star.svg";
   static String profile2User = "assets/icons/profile_2user.svg";
-  //static String  = "assets/icons/.svg";
+  static String toggleOn = "assets/icons/toggle_on.svg";
+  static String toggleOff = "assets/icons/toggle_off.svg";
+//static String  = "assets/icons/.svg";
 
 }

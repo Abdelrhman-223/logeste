@@ -27,9 +27,9 @@ class SignUpPage extends StatelessWidget {
       child: AppScaffold(
         isDrawer: false,
         appBar: commonAppBar(
-          AppStrings.loginAppBarTitle,
-          AppColors.appBackgroundColor,
-          AppColors.appTextColorBlack,
+          title: AppStrings.loginAppBarTitle,
+          appbarColor: AppColors.appBackgroundColor,
+          appbarTitleColor: AppColors.appTextColorBlack,
         ),
         body: Center(
           child: Column(

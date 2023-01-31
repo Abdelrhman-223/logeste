@@ -51,13 +51,16 @@ class AppStrings {
   static String forgetPassAppbarTitle = "هل نسيت كلمة السر ؟";
   static String forgetPassPageButtonText = "تأكيد";
 
-  static String enterPhonePageTitle = "قم بإدخال رقم الهاتف المسجل لاستعادة حسابك";
+  static String enterPhonePageTitle =
+      "قم بإدخال رقم الهاتف المسجل لاستعادة حسابك";
 
   static String enterPinCodePageTitle = "قم بإدخال الرمز لإستعادة حسابك";
-  static String enterPinCodePageSubTitle = "تم ارسال رسالة نصية لرقم هاتفك المسجل";
+  static String enterPinCodePageSubTitle =
+      "تم ارسال رسالة نصية لرقم هاتفك المسجل";
   static String enterPinCodeResendText = "إعادة إرسال";
 
-  static String newPasswordPageTitle = "تم استرجاع حسابك قم بتعيين كلمة سر جديدة";
+  static String newPasswordPageTitle =
+      "تم استرجاع حسابك قم بتعيين كلمة سر جديدة";
   static String newPasswordFieldHint = "كلمة السر الجديدة";
   static String repeatNewPasswordFieldHint = "تأكيد كلمة السر الجديدة";
   static String passwordsNotMatches = "الكلمات غير متطابقة, قم بكتابتها جيداً";
@@ -75,6 +78,9 @@ class AppStrings {
   static String tileTitleLogout = "تسجيل الخروج";
   static String tileTitleCaptain = "الكباتن";
 
-
-  // static String  = "";
+  //Home Page Strings.
+  static String homePageTitle = "حالة العميل : ";
+  static String homePageUserConnected = "متصل";
+  static String homePageUserNotConnected = "غير متصل";
+// static String  = "";
 }

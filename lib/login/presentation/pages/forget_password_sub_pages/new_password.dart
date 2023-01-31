@@ -53,13 +53,13 @@ class _NewPasswordState extends State<NewPassword> {
                   CustomTextField(
                     textEditingController: newPassword,
                     hintText: AppStrings.newPasswordFieldHint,
-                    iconPath: IconPaths.lockLinear,
+                    iconPath: IconPaths.lock,
                     isPasswordField: true,
                   ),
                   CustomTextField(
                     textEditingController: repeatNewPassword,
                     hintText: AppStrings.repeatNewPasswordFieldHint,
-                    iconPath: IconPaths.lockLinear,
+                    iconPath: IconPaths.lock,
                     isPasswordField: true,
                   ),
                   if (notMatches)

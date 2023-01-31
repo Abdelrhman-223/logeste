@@ -5,23 +5,25 @@ import 'package:logeste/core/utils/icons.dart';
 import '../utils/fonts.dart';
 
 PreferredSizeWidget commonAppBar({
-  String title = "Page Title",
+  Widget title = const Text("Page Title"),
   Color appbarColor = Colors.white,
   Color appbarTitleColor = Colors.black,
   List<Widget> appbarActions = const [],
+  PreferredSizeWidget? appbarBottom,
 }) {
   return AppBar(
     centerTitle: true,
-    iconTheme: IconThemeData(color: appbarTitleColor),
+    title: title,
     actions: appbarActions,
-    title: Text(title),
+    backgroundColor: appbarColor,
+    shadowColor: Colors.transparent,
+    iconTheme: IconThemeData(color: appbarTitleColor),
     titleTextStyle: TextStyle(
       color: appbarTitleColor,
       fontSize: AppFonts.myH7,
       fontWeight: FontWeight.w600,
       fontFamily: AppFonts.appFontFamily,
     ),
-    backgroundColor: appbarColor,
-    shadowColor: Colors.transparent,
+    bottom: appbarBottom,
   );
 }

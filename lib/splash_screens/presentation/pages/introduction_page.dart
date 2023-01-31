@@ -39,7 +39,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      isDrawer: false,
+      hasDrawer: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),

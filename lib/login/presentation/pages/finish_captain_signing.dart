@@ -15,9 +15,9 @@ class FinishCaptainSigning extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      isDrawer: false,
+      hasDrawer: false,
       appBar: commonAppBar(
-        title: AppStrings.loginAppBarTitle,
+        title: Text(AppStrings.loginAppBarTitle),
         appbarColor: AppColors.appBackgroundColor,
         appbarTitleColor: AppColors.appTextColorBlack,
       ),

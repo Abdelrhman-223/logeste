@@ -1,5 +1,4 @@
 class AppFonts {
-
   static String appFontFamily = "Cairo";
 
   static double myH1 = 50;
@@ -9,7 +8,8 @@ class AppFonts {
   static double myH5 = 25;
   static double myH6 = 20;
   static double myH7 = 16;
-  static double myP = 18;
-  static double myP14 = 14;
 
+  static double myP1 = 18;
+  static double myP2 = 14;
+  static double myP3 = 14;
 }

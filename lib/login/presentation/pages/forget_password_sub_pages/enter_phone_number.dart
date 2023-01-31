@@ -44,7 +44,7 @@ class EnterPhoneNumber extends StatelessWidget {
               CustomTextField(
                 textEditingController: phoneNumberController,
                 hintText: AppStrings.phoneFieldHint,
-                iconPath: IconPaths.callTwoTone,
+                iconPath: IconPaths.call,
                 isPhoneField: true,
               ),
               /*Padding(

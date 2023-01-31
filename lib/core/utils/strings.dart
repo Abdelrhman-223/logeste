@@ -68,11 +68,11 @@ class AppStrings {
   // Side Menu Strings.
   static String tileTitleShipments = "الشحنات";
   static String tileTitleOperations = "العمليات";
-  static String tileTitleShoppingBagOutline = "البيك أب";
-  static String tileTitleBillsOutline = "الفواتير";
+  static String tileTitleShoppingBag = "البيك أب";
+  static String tileTitleBills = "الفواتير";
   static String tileTitleWallet = "المحفظة";
-  static String tileTitleNotificationOutlineNotification = "الاشعارات";
-  static String tileTitleEyeScanTwoTone = "الشكاوى";
+  static String tileTitleNotification = "الاشعارات";
+  static String tileTitleQrScan = "الشكاوى";
   static String tileTitleSettings = "الاعدادات";
   static String tileTitleAboutUs = "عن لوجيستي";
   static String tileTitleLogout = "تسجيل الخروج";
@@ -82,5 +82,11 @@ class AppStrings {
   static String homePageTitle = "حالة العميل : ";
   static String homePageUserConnected = "متصل";
   static String homePageUserNotConnected = "غير متصل";
-// static String  = "";
+
+  //Bottom Navigator Bar Item labels.
+  static String shipmentsItemLabel = "الشحنات";
+  static String tasksItemLabel = "المهام";
+  static String billsItemLabel = "الفواتير";
+  static String notificationsItemLabel = "الاشعارات";
+  // static String  = "";
 }

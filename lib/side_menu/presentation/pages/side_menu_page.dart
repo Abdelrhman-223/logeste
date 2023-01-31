@@ -59,7 +59,7 @@ class SideMenuPage extends StatelessWidget {
                         child: CircleAvatar(
                           minRadius: 30,
                           backgroundColor: AppColors.appIconGreyColor,
-                          child: SvgPicture.asset(IconPaths.profileOutline,
+                          child: SvgPicture.asset(IconPaths.profile,
                               height: 40, width: 40),
                         ),
                       ),
@@ -71,7 +71,7 @@ class SideMenuPage extends StatelessWidget {
                             userName,
                             style: TextStyle(
                               color: AppColors.appTextColorWhite,
-                              fontSize: AppFonts.myP,
+                              fontSize: AppFonts.myP1,
                               fontWeight: FontWeight.w600,
                               fontFamily: AppFonts.appFontFamily,
                             ),
@@ -85,7 +85,7 @@ class SideMenuPage extends StatelessWidget {
                                   initialRating: rating,
                                   allowHalfRating: false,
                                   direction: Axis.horizontal,
-                                  unratedColor: AppColors.appIconLStarColor
+                                  unratedColor: AppColors.appIconLightStarColor
                                       .withOpacity(0.15),
                                   itemBuilder: (context, _) =>
                                       SvgPicture.asset(IconPaths.star),
@@ -97,7 +97,7 @@ class SideMenuPage extends StatelessWidget {
                                   agentName,
                                   style: TextStyle(
                                     color: AppColors.appTextSecondColor,
-                                    fontSize: AppFonts.myP14,
+                                    fontSize: AppFonts.myP2,
                                     fontWeight: FontWeight.w400,
                                     fontFamily: AppFonts.appFontFamily,
                                   ),
@@ -124,13 +124,13 @@ class SideMenuPage extends StatelessWidget {
                         () {},
                       ),
                       drawerTiles(
-                        IconPaths.shoppingBagOutline,
-                        AppStrings.tileTitleShoppingBagOutline,
+                        IconPaths.shoppingBag,
+                        AppStrings.tileTitleShoppingBag,
                         () {},
                       ),
                       drawerTiles(
-                        IconPaths.billsOutline,
-                        AppStrings.tileTitleBillsOutline,
+                        IconPaths.bills,
+                        AppStrings.tileTitleBills,
                         () {},
                       ),
                       drawerTiles(
@@ -139,13 +139,13 @@ class SideMenuPage extends StatelessWidget {
                         () {},
                       ),
                       drawerTiles(
-                        IconPaths.notificationOutlineNotification,
-                        AppStrings.tileTitleNotificationOutlineNotification,
+                        IconPaths.notification,
+                        AppStrings.tileTitleNotification,
                         () {},
                       ),
                       drawerTiles(
-                        IconPaths.eyeScanTwoTone,
-                        AppStrings.tileTitleEyeScanTwoTone,
+                        IconPaths.scan,
+                        AppStrings.tileTitleQrScan,
                         () {},
                       ),
                       drawerTiles(
@@ -165,7 +165,7 @@ class SideMenuPage extends StatelessWidget {
                       ),
                       if (!isCaptain)
                         drawerTiles(
-                          IconPaths.profile2User,
+                          IconPaths.multiProfile,
                           AppStrings.tileTitleCaptain,
                           () {},
                         ),

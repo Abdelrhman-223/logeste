@@ -21,9 +21,9 @@ class ForgetPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      isDrawer: false,
+      hasDrawer: false,
       appBar: commonAppBar(
-        title: AppStrings.forgetPassAppbarTitle,
+        title: Text(AppStrings.forgetPassAppbarTitle),
         appbarColor: AppColors.loginTabsBackgroundColor,
         appbarTitleColor: AppColors.appTextColorBlack,
       ),

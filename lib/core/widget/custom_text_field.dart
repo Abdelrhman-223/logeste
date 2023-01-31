@@ -66,7 +66,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       : TextInputType.text,
               style: TextStyle(
                 color: AppColors.appTextFieldTextColor,
-                fontSize: AppFonts.myP,
+                fontSize: AppFonts.myP1,
               ),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/strings.dart';
+import 'package:logeste/core/widget/navigation_pages.dart';
 import 'package:logeste/home_page/presentation/pages/home_page.dart';
 import 'package:logeste/login/presentation/pages/sign_up_page.dart';
 import 'package:logeste/core/widget/common_appbar.dart';
@@ -24,8 +25,8 @@ class LoginPage extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
 
   final List<Widget> tapsText = [
-    TabBarText(text: AppStrings.loginPageTabBarTitle1),
-    TabBarText(text: AppStrings.loginPageTabBarTitle2),
+    tabBarText(text: AppStrings.loginPageTabBarTitle1),
+    tabBarText(text: AppStrings.loginPageTabBarTitle2),
   ];
 
   @override
@@ -34,9 +35,9 @@ class LoginPage extends StatelessWidget {
       length: tapsText.length,
       initialIndex: 0,
       child: AppScaffold(
-        isDrawer: false,
+        hasDrawer: false,
         appBar: commonAppBar(
-          title: AppStrings.loginAppBarTitle,
+          title: Text(AppStrings.loginAppBarTitle),
           appbarColor: AppColors.appBackgroundColor,
           appbarTitleColor: AppColors.appTextColorBlack,
         ),
@@ -65,129 +66,124 @@ class LoginPage extends StatelessWidget {
                   tabIndex = index;
                 },
               ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                color: AppColors.loginTabsBackgroundColor,
-                height: 545,
-                /*child: TabBarView(
-                  children: [
-                    LoginTabPage(isCaptain: true),
-                    LoginTabPage(isCaptain: false),
-                  ],
-                ),*/
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        CustomTextField(
-                          textEditingController: phoneNumberController,
-                          hintText: AppStrings.phoneFieldHint,
-                          iconPath: IconPaths.callTwoTone,
-                          isPhoneField: true,
-                        ),
-                        CustomTextField(
-                          textEditingController: passwordController,
-                          hintText: AppStrings.passwordFieldHint,
-                          iconPath: IconPaths.lockLinear,
-                          isPasswordField: true,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            print("Goto Forget password page");
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ForgetPasswordPage(),
-                                ));
-                          },
-                          hoverColor: AppColors.appTextOrangeColor,
-                          child: Text(
-                            AppStrings.loginPageForgetPassText,
-                            style: TextStyle(
-                              color: AppColors.appTextThirdColor,
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                  color: AppColors.loginTabsBackgroundColor,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          CustomTextField(
+                            textEditingController: phoneNumberController,
+                            hintText: AppStrings.phoneFieldHint,
+                            iconPath: IconPaths.call,
+                            isPhoneField: true,
+                          ),
+                          CustomTextField(
+                            textEditingController: passwordController,
+                            hintText: AppStrings.passwordFieldHint,
+                            iconPath: IconPaths.lock,
+                            isPasswordField: true,
+                          ),
+                          InkWell(
+                            onTap: () {
+                              print("Goto Forget password page");
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ForgetPasswordPage(),
+                                  ));
+                            },
+                            hoverColor: AppColors.appTextOrangeColor,
+                            child: Text(
+                              AppStrings.loginPageForgetPassText,
+                              style: TextStyle(
+                                color: AppColors.appTextThirdColor,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        CustomButton(
-                          buttonText: AppStrings.loginPageButtonText,
-                          buttonColor: AppColors.appIconsColor,
-                          buttonFunc: () {
-                            if (tabIndex == 0) {
-                              // Do what you want if he is CAPTAIN.
-                              print("I am Captain");
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const HomePage(isCaptain: true),
-                                ),
-                              );
-                            } else {
-                              // Do what you want if he is AGENT.
-                              print("I am Agent");
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const HomePage(isCaptain: false),
-                                ),
-                              );
-                            }
-                          },
-                          buttonTextColor: AppColors.appTextColorWhite,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 25),
-                          child: InkWell(
-                            onTap: () {
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          CustomButton(
+                            buttonText: AppStrings.loginPageButtonText,
+                            buttonColor: AppColors.appIconsColor,
+                            buttonFunc: () {
                               if (tabIndex == 0) {
                                 // Do what you want if he is CAPTAIN.
                                 print("I am Captain");
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          SignUpPage(initTap: 0),
-                                    ));
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavigationPages(isCaptain: true),
+                                  ),
+                                );
                               } else {
                                 // Do what you want if he is AGENT.
                                 print("I am Agent");
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          SignUpPage(initTap: 1),
-                                    ));
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        NavigationPages(isCaptain: false),
+                                  ),
+                                );
                               }
                             },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  AppStrings.loginPageNoAccountText,
-                                  style: TextStyle(
-                                    color: AppColors.appTextThirdColor,
+                            buttonTextColor: AppColors.appTextColorWhite,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 25),
+                            child: InkWell(
+                              onTap: () {
+                                if (tabIndex == 0) {
+                                  // Do what you want if he is CAPTAIN.
+                                  print("I am Captain");
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            SignUpPage(initTap: 0),
+                                      ));
+                                } else {
+                                  // Do what you want if he is AGENT.
+                                  print("I am Agent");
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            SignUpPage(initTap: 1),
+                                      ));
+                                }
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    AppStrings.loginPageNoAccountText,
+                                    style: TextStyle(
+                                      color: AppColors.appTextThirdColor,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  AppStrings.loginPageCreateAccountText,
-                                  style: TextStyle(
-                                    color: AppColors.appTextColorBlack,
+                                  Text(
+                                    AppStrings.loginPageCreateAccountText,
+                                    style: TextStyle(
+                                      color: AppColors.appTextColorBlack,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

@@ -15,8 +15,8 @@ class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key, required this.initTap}) : super(key: key);
 
   final List<Widget> tapsText = [
-    TabBarText(text: AppStrings.loginPageTabBarTitle1),
-    TabBarText(text: AppStrings.loginPageTabBarTitle2),
+    tabBarText(text: AppStrings.loginPageTabBarTitle1),
+    tabBarText(text: AppStrings.loginPageTabBarTitle2),
   ];
 
   @override
@@ -25,9 +25,9 @@ class SignUpPage extends StatelessWidget {
       length: tapsText.length,
       initialIndex: initTap,
       child: AppScaffold(
-        isDrawer: false,
+        hasDrawer: false,
         appBar: commonAppBar(
-          title: AppStrings.loginAppBarTitle,
+          title: Text(AppStrings.loginAppBarTitle),
           appbarColor: AppColors.appBackgroundColor,
           appbarTitleColor: AppColors.appTextColorBlack,
         ),
@@ -53,15 +53,16 @@ class SignUpPage extends StatelessWidget {
                 unselectedLabelColor: AppColors.appTextSecondColor,
                 tabs: tapsText,
               ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                color: AppColors.loginTabsBackgroundColor,
-                height: 545,
-                child: TabBarView(
-                  children: [
-                    SignUpTabPage(isCaptain: true),
-                    SignUpTabPage(isCaptain: false),
-                  ],
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                  color: AppColors.loginTabsBackgroundColor,
+                  child: TabBarView(
+                    children: [
+                      SignUpTabPage(isCaptain: true),
+                      SignUpTabPage(isCaptain: false),
+                    ],
+                  ),
                 ),
               )
             ],

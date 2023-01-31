@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:logeste/core/utils/icons.dart';
 import 'package:logeste/core/utils/strings.dart';
-import 'package:logeste/core/widget/app_scaffold.dart';
 import 'package:logeste/side_menu/presentation/widgets/drawer_tiles.dart';
 
 import '../../../core/utils/colors.dart';
 import '../../../core/utils/fonts.dart';
 
 class SideMenuPage extends StatelessWidget {
+  double rating = 3;
+  String userName = "اسم المستخدم", agentName = "شركة / وكيل";
   final bool isCaptain;
-  const SideMenuPage({Key? key, required this.isCaptain}) : super(key: key);
+
+  SideMenuPage({Key? key, required this.isCaptain}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +59,8 @@ class SideMenuPage extends StatelessWidget {
                         child: CircleAvatar(
                           minRadius: 30,
                           backgroundColor: AppColors.appIconGreyColor,
+                          child: SvgPicture.asset(IconPaths.profileOutline,
+                              height: 40, width: 40),
                         ),
                       ),
                       Column(
@@ -63,7 +68,7 @@ class SideMenuPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "اسم العميل",
+                            userName,
                             style: TextStyle(
                               color: AppColors.appTextColorWhite,
                               fontSize: AppFonts.myP,
@@ -71,21 +76,32 @@ class SideMenuPage extends StatelessWidget {
                               fontFamily: AppFonts.appFontFamily,
                             ),
                           ),
-                          Row(
-                            children: [
-                              SvgPicture.asset(IconPaths.star),
-                              SvgPicture.asset(IconPaths.star),
-                              SvgPicture.asset(IconPaths.star),
-                              Opacity(
-                                opacity: 0.25,
-                                child: SvgPicture.asset(IconPaths.star),
-                              ),
-                              Opacity(
-                                opacity: 0.25,
-                                child: SvgPicture.asset(IconPaths.star),
-                              ),
-                            ],
-                          ),
+                          (isCaptain)
+                              ? RatingBar.builder(
+                                  glow: false,
+                                  itemSize: 16,
+                                  itemCount: 5,
+                                  ignoreGestures: true,
+                                  initialRating: rating,
+                                  allowHalfRating: false,
+                                  direction: Axis.horizontal,
+                                  unratedColor: AppColors.appIconLStarColor
+                                      .withOpacity(0.15),
+                                  itemBuilder: (context, _) =>
+                                      SvgPicture.asset(IconPaths.star),
+                                  onRatingUpdate: (rating) {
+                                    print(rating);
+                                  },
+                                )
+                              : Text(
+                                  agentName,
+                                  style: TextStyle(
+                                    color: AppColors.appTextSecondColor,
+                                    fontSize: AppFonts.myP14,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: AppFonts.appFontFamily,
+                                  ),
+                                ),
                         ],
                       ),
                     ],
@@ -96,24 +112,25 @@ class SideMenuPage extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Column(
                     children: [
-                      if(isCaptain)drawerTiles(
+                      if (isCaptain)
+                        drawerTiles(
+                          IconPaths.operations,
+                          AppStrings.tileTitleOperations,
+                          () {},
+                        ),
+                      drawerTiles(
                         IconPaths.shipments,
                         AppStrings.tileTitleShipments,
                         () {},
                       ),
-                      if(isCaptain)drawerTiles(
+                      drawerTiles(
                         IconPaths.shoppingBagOutline,
                         AppStrings.tileTitleShoppingBagOutline,
                         () {},
                       ),
-                      if(isCaptain)drawerTiles(
+                      drawerTiles(
                         IconPaths.billsOutline,
                         AppStrings.tileTitleBillsOutline,
-                        () {},
-                      ),
-                      if(!isCaptain)drawerTiles(
-                        IconPaths.operations,
-                        AppStrings.tileTitleOperations,
                         () {},
                       ),
                       drawerTiles(
@@ -146,6 +163,12 @@ class SideMenuPage extends StatelessWidget {
                         AppStrings.tileTitleLogout,
                         () {},
                       ),
+                      if (!isCaptain)
+                        drawerTiles(
+                          IconPaths.profile2User,
+                          AppStrings.tileTitleCaptain,
+                          () {},
+                        ),
                     ],
                   ),
                 )

@@ -37,6 +37,7 @@ class AppColors {
   static Color appIconGreyColor = const Color.fromRGBO(108, 108, 108, 1);
   static Color appIconGreenColor = const Color.fromRGBO(33, 150, 83, 1);
   static Color appIconLittleRedColor = const Color.fromRGBO(235, 87, 87, 1);
+  static Color appIconLStarColor = const Color.fromRGBO(242, 201, 76, 1);
 
   static Color appButtonTextColor = const Color.fromRGBO(255, 255, 255, 1);
   static Color appButtonBlackColor = const Color.fromRGBO(0, 0, 0, 1);

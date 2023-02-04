@@ -7,10 +7,10 @@ import 'package:logeste/core/widget/shipments_page_appbar.dart';
 import 'package:logeste/core/widget/tasks_page_appbar.dart';
 import 'package:logeste/home_page/presentation/pages/home_page.dart';
 import 'package:logeste/home_page/presentation/widgets/home_page_appbar.dart';
-import '../../../core/components/bottom_navigator_bar_item.dart';
-import 'app_scaffold.dart';
-import 'bills_page_appbar.dart';
-import 'notifications_page_appbar.dart';
+import '../core/components/bottom_navigator_bar_item.dart';
+import 'core/widget/app_scaffold.dart';
+import 'core/widget/bills_page_appbar.dart';
+import 'core/widget/notifications_page_appbar.dart';
 
 class NavigationPages extends StatelessWidget {
   bool isCaptain;

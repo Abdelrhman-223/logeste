@@ -6,7 +6,7 @@ import '../../../core/components/custom_button.dart';
 import '../../../core/utils/colors.dart';
 import '../../../core/utils/icons.dart';
 import '../../../core/utils/strings.dart';
-import '../../../core/widget/custom_text_field.dart';
+import '../../../core/components/custom_text_field.dart';
 
 class SignUpTabPage extends StatelessWidget {
   final bool isCaptain;
@@ -38,38 +38,38 @@ class SignUpTabPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 (isCaptain)
-                    ? CustomTextField(
+                    ? customTextField(
                   textEditingController: userNameController,
                   hintText: AppStrings.userNameFieldHint,
                   iconPath: IconPaths.profile,
                 )
                     : Column(
                   children: [
-                    CustomTextField(
+                    customTextField(
                       textEditingController: agentNameController,
                       hintText: AppStrings.agentNameFieldHint,
                       iconPath: IconPaths.buildings,
                     ),
-                    CustomTextField(
+                    customTextField(
                       textEditingController: managerNameController,
                       hintText: AppStrings.managerNameFieldHint,
                       iconPath: IconPaths.profile,
                     )
                   ],
                 ),
-                CustomTextField(
+                customTextField(
                   textEditingController: phoneNumberController,
                   hintText: AppStrings.phoneFieldHint,
                   iconPath: IconPaths.call,
                   isPhoneField: true,
                 ),
-                CustomTextField(
+                customTextField(
                   textEditingController: emailController,
                   hintText: AppStrings.emailFieldHint,
                   iconPath: IconPaths.email,
                   isEmailField: true,
                 ),
-                CustomTextField(
+                customTextField(
                   textEditingController: passwordController,
                   hintText: AppStrings.passwordFieldHint,
                   iconPath: IconPaths.lock,
@@ -112,7 +112,7 @@ class SignUpTabPage extends StatelessWidget {
             ),
             Column(
               children: [
-                CustomButton(
+                customButton(
                   buttonText: (isCaptain)?buttonText:AppStrings.signUpPageButtonText,
                   buttonColor: AppColors.appIconsColor,
                   buttonFunc: () {

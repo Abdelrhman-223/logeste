@@ -4,6 +4,91 @@ import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/icons.dart';
 
+Widget customTextField({
+  required TextEditingController textEditingController,
+  required String hintText,
+  required String? iconPath,
+  bool isPasswordField = false,
+  bool isPhoneField = false,
+  bool isEmailField = false,
+}) {
+  bool showPasswordField = isPasswordField;
+  String passIcon = IconPaths.eyeSlash;
+  return Container(
+    height: 50,
+    alignment: Alignment.center,
+    padding: const EdgeInsets.symmetric(horizontal: 20),
+    margin: const EdgeInsets.symmetric(vertical: 10),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: AppColors.appTextFieldBackgroundColor,
+      border: Border.all(
+        color: AppColors.appTextFieldBorderColor,
+      ),
+    ),
+    child: StatefulBuilder(
+      builder: (BuildContext context, void Function(void Function()) setState) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: TextField(
+                controller: textEditingController,
+                cursorColor: AppColors.appTextFieldIconColor,
+                obscureText: showPasswordField,
+                keyboardType: (isPhoneField)
+                    ? TextInputType.phone
+                    : (isEmailField)
+                        ? TextInputType.emailAddress
+                        : TextInputType.text,
+                style: TextStyle(
+                  color: AppColors.appTextFieldTextColor,
+                  fontSize: AppFonts.myP1,
+                ),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.zero,
+                  hintText: hintText,
+                  hintStyle: TextStyle(
+                    color: AppColors.appTextFieldHintColor,
+                    fontSize: AppFonts.myH7,
+                  ),
+                  icon: (iconPath != null)?SvgPicture.asset(
+                    iconPath!,
+                    color: AppColors.appTextFieldIconColor,
+                  ): null,
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+            ),
+            if (isPasswordField)
+              GestureDetector(
+                onTap: () {
+                  print("object");
+                  setState(() {
+                    (passIcon == IconPaths.eye)
+                        ? passIcon = IconPaths.eyeSlash
+                        : passIcon = IconPaths.eye;
+                    showPasswordField = !showPasswordField;
+                  });
+                },
+                child: SvgPicture.asset(
+                  passIcon,
+                  color: AppColors.appTextFieldIconColor,
+                ),
+              ),
+          ],
+        );
+      },
+    ),
+  );
+}
+/*
+
 class CustomTextField extends StatefulWidget {
   bool isPasswordField;
   bool isPhoneField;
@@ -109,3 +194,4 @@ class _CustomTextFieldState extends State<CustomTextField> {
     );
   }
 }
+*/

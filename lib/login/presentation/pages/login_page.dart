@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/fonts.dart';
 import 'package:logeste/core/utils/strings.dart';
-import 'package:logeste/core/widget/navigation_pages.dart';
+import 'package:logeste/navigation_pages.dart';
 import 'package:logeste/home_page/presentation/pages/home_page.dart';
 import 'package:logeste/login/presentation/pages/sign_up_page.dart';
 import 'package:logeste/core/widget/common_appbar.dart';
@@ -13,7 +13,7 @@ import '../../../core/widget/app_scaffold.dart';
 import 'package:logeste/login/presentation/pages/forget_password_page.dart';
 
 import '../../../core/utils/icons.dart';
-import '../../../core/widget/custom_text_field.dart';
+import '../../../core/components/custom_text_field.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
@@ -76,13 +76,13 @@ class LoginPage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          CustomTextField(
+                          customTextField(
                             textEditingController: phoneNumberController,
                             hintText: AppStrings.phoneFieldHint,
                             iconPath: IconPaths.call,
                             isPhoneField: true,
                           ),
-                          CustomTextField(
+                          customTextField(
                             textEditingController: passwordController,
                             hintText: AppStrings.passwordFieldHint,
                             iconPath: IconPaths.lock,
@@ -109,7 +109,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          CustomButton(
+                          customButton(
                             buttonText: AppStrings.loginPageButtonText,
                             buttonColor: AppColors.appIconsColor,
                             buttonFunc: () {

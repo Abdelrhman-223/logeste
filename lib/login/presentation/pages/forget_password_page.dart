@@ -42,7 +42,7 @@ class ForgetPasswordPage extends StatelessWidget {
             flex: 1,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 20),
-              child: CustomButton(
+              child: customButton(
                 buttonText: AppStrings.forgetPassPageButtonText,
                 buttonColor: AppColors.appIconsColor,
                 buttonFunc: () {

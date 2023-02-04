@@ -16,6 +16,7 @@ class IconPaths {
   static String profile = "assets/icons/profile.svg";
   static String lock = "assets/icons/lock.svg";
   static String call = "assets/icons/call.svg";
+  static String callCircle = "assets/icons/call_circle.svg";
   static String buildings = "assets/icons/buildings.svg";
   static String cross = "assets/icons/cross.svg";
   static String logout = "assets/icons/logout.svg";
@@ -29,6 +30,11 @@ class IconPaths {
   static String toggleOn = "assets/icons/toggle_on.svg";
   static String toggleOff = "assets/icons/toggle_off.svg";
   static String search = "assets/icons/search.svg";
+  static String receiveArrow = "assets/icons/receive_arrow.svg";
+  static String pick = "assets/icons/pick.svg";
+  static String doneMark = "assets/icons/done_mark.svg";
+  static String emptyCheckbox = "assets/icons/empty_checkbox.svg";
+  static String checkbox = "assets/icons/checkbox.svg";
 //static String  = "assets/icons/.svg";
 
 }

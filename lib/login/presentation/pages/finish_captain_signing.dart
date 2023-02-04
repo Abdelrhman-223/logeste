@@ -82,7 +82,7 @@ class FinishCaptainSigning extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 50),
-                    child: CustomButton(
+                    child: customButton(
                       buttonText: AppStrings.signUpPageButtonText,
                       buttonColor: AppColors.appIconsColor,
                       buttonFunc: () {

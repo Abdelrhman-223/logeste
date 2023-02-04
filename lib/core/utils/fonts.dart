@@ -11,5 +11,5 @@ class AppFonts {
 
   static double myP1 = 18;
   static double myP2 = 14;
-  static double myP3 = 14;
+  static double myP3 = 12;
 }

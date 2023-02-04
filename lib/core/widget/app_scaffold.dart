@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:logeste/core/utils/colors.dart';
-import 'package:logeste/core/widget/common_drawer.dart';
-import 'package:logeste/core/widget/navigation_pages.dart';
 import 'package:logeste/side_menu/presentation/pages/side_menu_page.dart';
 
 class AppScaffold extends StatelessWidget {
@@ -35,7 +33,7 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       // this code remove the keyboard overflow.
       resizeToAvoidBottomInset: false,
-      drawer: hasDrawer! ? SideMenuPage(isCaptain: isCaptain ?? true) : null,
+      drawer: (hasDrawer!) ? SideMenuPage(isCaptain: isCaptain ?? true) : null,
       //SafeArea to save content from the phone top par.
       body: SafeArea(
         child: body,

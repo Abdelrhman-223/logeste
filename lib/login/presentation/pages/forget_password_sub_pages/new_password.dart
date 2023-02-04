@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:logeste/core/widget/custom_text_field.dart';
+import 'package:logeste/core/components/custom_text_field.dart';
 
 import '../../../../core/components/custom_button.dart';
 import '../../../../core/utils/colors.dart';
@@ -50,13 +50,13 @@ class _NewPasswordState extends State<NewPassword> {
             children: [
               Column(
                 children: [
-                  CustomTextField(
+                  customTextField(
                     textEditingController: newPassword,
                     hintText: AppStrings.newPasswordFieldHint,
                     iconPath: IconPaths.lock,
                     isPasswordField: true,
                   ),
-                  CustomTextField(
+                  customTextField(
                     textEditingController: repeatNewPassword,
                     hintText: AppStrings.repeatNewPasswordFieldHint,
                     iconPath: IconPaths.lock,

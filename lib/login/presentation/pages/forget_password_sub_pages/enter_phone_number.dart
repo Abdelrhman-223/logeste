@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:logeste/core/widget/custom_text_field.dart';
+import 'package:logeste/core/components/custom_text_field.dart';
 
 import '../../../../core/components/custom_button.dart';
 import '../../../../core/utils/colors.dart';
@@ -41,7 +41,7 @@ class EnterPhoneNumber extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomTextField(
+              customTextField(
                 textEditingController: phoneNumberController,
                 hintText: AppStrings.phoneFieldHint,
                 iconPath: IconPaths.call,

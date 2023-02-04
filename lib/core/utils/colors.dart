@@ -27,6 +27,7 @@ class AppColors {
   static Color appTextRedColor = const Color.fromRGBO(220, 54, 46, 1);
   static Color appTextOrangeColor = const Color.fromRGBO(246, 125, 49, 1);
   static Color appTextLittleRedColor = const Color.fromRGBO(235, 87, 87, 1);
+  static Color appTextGreenColor = const Color.fromRGBO(33, 150, 83, 1);
 
   static Color appTextFieldIconColor = const Color.fromRGBO(148, 150, 153, 1);
   static Color appTextFieldTextColor = const Color.fromRGBO(108, 108, 108, 1);
@@ -38,6 +39,8 @@ class AppColors {
   static Color appIconsColorWhite = const Color.fromRGBO(255, 255, 255, 1);
   static Color appIconGreyColor = const Color.fromRGBO(108, 108, 108, 1);
   static Color appIconLightGreyColor = const Color.fromRGBO(148, 150, 153, 1);
+  static Color appIconLightGreyColor2 = const Color.fromRGBO(211, 211, 211, 1);
+  static Color appIconLightGreyColor3 = const Color.fromRGBO(232, 232, 232, 1);
   static Color appIconGreenColor = const Color.fromRGBO(33, 150, 83, 1);
   static Color appIconLittleRedColor = const Color.fromRGBO(235, 87, 87, 1);
   static Color appIconLightStarColor = const Color.fromRGBO(242, 201, 76, 1);
@@ -46,8 +49,10 @@ class AppColors {
 
   static Color appButtonTextColor = const Color.fromRGBO(255, 255, 255, 1);
   static Color appButtonBlackColor = const Color.fromRGBO(0, 0, 0, 1);
+  static Color appButtonLightBlackColor = const Color.fromRGBO(37, 37, 37, 1);
   static Color appButtonRedColor = const Color.fromRGBO(220, 54, 46, 1);
   static Color appButtonGreenColor = const Color.fromRGBO(33, 150, 83, 1);
+  static Color appButtonLightGreenColor = const Color.fromRGBO(233, 245, 238, 1);
   static Color appButtonOrangeColor = const Color.fromRGBO(246, 125, 49, 1);
   static Color appButtonLittleRedColor = const Color.fromRGBO(235, 87, 87, 0.25);
 

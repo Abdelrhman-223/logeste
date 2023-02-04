@@ -82,11 +82,23 @@ class AppStrings {
   static String homePageTitle = "حالة العميل : ";
   static String homePageUserConnected = "متصل";
   static String homePageUserNotConnected = "غير متصل";
+  static String homePageStopConnection = "تأكيد ايقاف الاتصال";
+  static String homePageStopScanSearchButton = "Scan to Search";
+  static String homePageStopScanReceiveButton = "Scan to Receive";
+  static String homePageStopScanPickButton = "Scan to Pick";
+  static String homePageSheetAnotherReason = "ماهو سبب تأجيل الشحنة ؟";
+  static List reasons = [
+    "السبب الأول",
+    "السبب الثانى",
+    "السبب الثالث",
+    "سبب اخر",
+  ];
 
   //Bottom Navigator Bar Item labels.
   static String shipmentsItemLabel = "الشحنات";
   static String tasksItemLabel = "المهام";
   static String billsItemLabel = "الفواتير";
   static String notificationsItemLabel = "الاشعارات";
-  // static String  = "";
+
+// static String  = "";
 }

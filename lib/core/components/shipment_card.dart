@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/utils/icons.dart';
+import 'package:logeste/core/utils/strings.dart';
 
 import '../utils/fonts.dart';
 
-Widget shipmentCard() {
+Widget shipmentCard({
+  required String shipmentNumber,
+  required String shipmentType,
+  required String shipmentSender,
+  required String shipmentMarket,
+  required String shipmentReceiverAddress,
+  required String shipmentNotes,
+}) {
   return StatefulBuilder(
     builder: (BuildContext context, void Function(void Function()) setState) {
       return GestureDetector(
@@ -35,7 +43,7 @@ Widget shipmentCard() {
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Text(
-                        "تم استعجال الشحنة",
+                        AppStrings.shipmentDescription,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: AppColors.appTextLittleRedColor,
@@ -50,13 +58,13 @@ Widget shipmentCard() {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "رقم الشحنة",
+                              AppStrings.shipmentNumber,
                               style: TextStyle(
                                 color: AppColors.appTextThirdColor,
                               ),
                             ),
                             Text(
-                              "5468427334",
+                              shipmentNumber,
                               style: TextStyle(
                                 color: AppColors.appTextOrangeColor,
                               ),
@@ -67,13 +75,13 @@ Widget shipmentCard() {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "نوع الشحنة",
+                              AppStrings.shipmentType,
                               style: TextStyle(
                                 color: AppColors.appTextThirdColor,
                               ),
                             ),
                             Text(
-                              "ساعة جلد طبيعى",
+                              shipmentType,
                               style: TextStyle(
                                 color: AppColors.appTextOrangeColor,
                               ),
@@ -90,13 +98,13 @@ Widget shipmentCard() {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "المرسل",
+                              AppStrings.shipmentSender,
                               style: TextStyle(
                                 color: AppColors.appTextThirdColor,
                               ),
                             ),
                             Text(
-                              "شادي السيد محمد محمود",
+                              shipmentSender,
                               style: TextStyle(
                                 color: AppColors.appTextColorBlack,
                               ),
@@ -114,13 +122,13 @@ Widget shipmentCard() {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "المتجر",
+                              AppStrings.shipmentMarket,
                               style: TextStyle(
                                 color: AppColors.appTextThirdColor,
                               ),
                             ),
                             Text(
-                              "سوق.كوم - سعيد جمال",
+                              shipmentMarket,
                               style: TextStyle(
                                 color: AppColors.appTextColorBlack,
                               ),
@@ -134,13 +142,13 @@ Widget shipmentCard() {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "عنوان المستلم",
+                          AppStrings.shipmentReceiverAddress,
                           style: TextStyle(
                             color: AppColors.appTextThirdColor,
                           ),
                         ),
                         Text(
-                          "مصر القاهرة الجديدة مدينة نصر الحى السابع امام صيدلية الطرشوبى عمارة 11 شقة 6 ",
+                          shipmentReceiverAddress,
                           style: TextStyle(
                             color: AppColors.appTextColorBlack,
                           ),
@@ -151,13 +159,13 @@ Widget shipmentCard() {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "الملاحظات",
+                          AppStrings.shipmentNotes,
                           style: TextStyle(
                             color: AppColors.appTextThirdColor,
                           ),
                         ),
                         Text(
-                          "مصر القاهرة الجديدة مدينة نصر الحى السابع امام صيدلية الطرشوبى عمارة 11 شقة 6 ",
+                          shipmentNotes,
                           style: TextStyle(
                             color: AppColors.appTextColorBlack,
                           ),
@@ -168,7 +176,8 @@ Widget shipmentCard() {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
                 decoration: BoxDecoration(
                   color: AppColors.appButtonLightBlackColor,
                   borderRadius: const BorderRadius.vertical(
@@ -179,7 +188,7 @@ Widget shipmentCard() {
                   children: [
                     Expanded(
                       child: Text(
-                        "تفاصيل الشحنة",
+                        AppStrings.shipmentCardButton,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: AppColors.appTextColorWhite,

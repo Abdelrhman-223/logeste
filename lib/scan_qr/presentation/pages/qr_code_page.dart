@@ -4,8 +4,11 @@ import 'package:logeste/core/utils/colors.dart';
 import 'package:logeste/core/widget/app_scaffold.dart';
 import 'package:logeste/core/widget/common_appbar.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-
+import '../../../core/components/shipment_card.dart';
 import '../widgets/qr_overlay.dart';
+import 'package:logeste/scan_qr/presentation/widgets/scan_qr_sheet.dart';
+import '../../../core/utils/strings.dart';
+
 
 class QrCodePage extends StatelessWidget {
   final String qrPageType;
@@ -15,6 +18,30 @@ class QrCodePage extends StatelessWidget {
   MobileScannerController scannerController = MobileScannerController();
 
   String? scannedData;
+
+  ///this list comes from the API.
+  List itemsList = [
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+    "شنطة جلد طبيعى ماركة شي إن",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +78,61 @@ class QrCodePage extends StatelessWidget {
                       sheetChild: IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.close),
+                      ),
+                    );
+                  }
+
+                  if (qrPageType == "search") {
+                    customBottomSheet(
+                      context,
+                      isScanButton: true,
+                      sheetColor: AppColors.loginTabsBackgroundColor,
+                      sheetChild: ListView(
+                        children: [
+
+                          ///The Data that will put here also from the API.
+                          shipmentCard(
+                            shipmentNumber: scannedData.toString(),
+                            shipmentType: "ساعة جلد طبيعى",
+                            shipmentSender: "شادي السيد محمد محمود",
+                            shipmentMarket: "سوق.كوم - سعيد جمال",
+                            shipmentReceiverAddress:
+                            "مصر القاهرة الجديدة مدينة نصر الحى السابع امام صيدلية الطرشوبى عمارة 11 شقة 6 ",
+                            shipmentNotes:
+                            "مصر القاهرة الجديدة مدينة نصر الحى السابع امام صيدلية الطرشوبى عمارة 11 شقة 6 ",
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+                  else if (qrPageType == "receive") {
+                    customBottomSheet(
+                      context,
+                      isScanButton: true,
+                      sheetChild: scanQrSheet(context,
+                          itemList: itemsList,
+                          subButtonText: AppStrings.receiveSheetSubButtonText,
+                          buttonText: AppStrings.receiveSheetButtonTextPart1 +
+                              itemsList.length.toString() +
+                              AppStrings.receiveSheetButtonTextPart2,
+                          doneText: AppStrings.receiveSheetDoneText,
+                          qrCode: scannedData.toString()),
+                    );
+                  }
+                  else if (qrPageType == "pick") {
+                    customBottomSheet(
+                      context,
+                      isScanButton: true,
+                      sheetChild: scanQrSheet(
+                        context,
+                        itemList: itemsList,
+                        subButtonText: AppStrings.pickSheetSubButtonText,
+                        buttonText: AppStrings.pickSheetButtonTextPart1 +
+                            itemsList.length.toString() +
+                            AppStrings.pickSheetButtonTextPart2,
+                        doneText: AppStrings.pickSheetDoneTextPart1 +
+                            itemsList.length.toString() +
+                            AppStrings.pickSheetDoneTextPart2,
                       ),
                     );
                   }

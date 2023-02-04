@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         AppStrings.appTitle,
         style: TextStyle(
           color: AppColors.splashScreenTextColor,
-          fontSize: 40,
+          fontSize: (MediaQuery.of(context).size.height) / 20,
         ),
       ),
       backgroundColor: AppColors.splashScreenBackgroundColor,

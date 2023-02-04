@@ -93,12 +93,31 @@ class AppStrings {
     "السبب الثالث",
     "سبب اخر",
   ];
+  static String receiveSheetButtonTextPart1 = "استلام (";
+  static String receiveSheetButtonTextPart2 = " شحنة)";
+  static String receiveSheetSubButtonText = "اذهب الى الشحنات";
+  static String receiveSheetDoneText = "تم استلام الشحنة بنجاح";
+  static String pickSheetButtonTextPart1 = "التقط (";
+  static String pickSheetButtonTextPart2 = " شحنة)";
+  static String pickSheetSubButtonText = "اذهب الى المهام";
+  static String pickSheetDoneTextPart1 = "تم التقاط عدد ";
+  static String pickSheetDoneTextPart2 = " شحنة بنجاح";
 
   //Bottom Navigator Bar Item labels.
   static String shipmentsItemLabel = "الشحنات";
   static String tasksItemLabel = "المهام";
   static String billsItemLabel = "الفواتير";
   static String notificationsItemLabel = "الاشعارات";
+
+  //Shipment Card Strings.
+  static String shipmentDescription = "تم استعجال الشحنة";
+  static String shipmentNumber = "رقم الشحنة";
+  static String shipmentType = "نوع الشحنة";
+  static String shipmentSender = "المرسل";
+  static String shipmentMarket = "المتجر";
+  static String shipmentReceiverAddress = "عنوان المستلم";
+  static String shipmentNotes = "الملاحظات";
+  static String shipmentCardButton = "الملاحظات";
 
 // static String  = "";
 }

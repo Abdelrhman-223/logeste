@@ -21,6 +21,7 @@ class _SliderContentState extends State<SliderContent> {
       children: [
         SvgPicture.asset(
           widget.imgPath,
+          height: (MediaQuery.of(context).size.height) / 2.5,
         ),
         Text(
           widget.description,

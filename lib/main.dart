@@ -1,7 +1,6 @@
 import 'package:logeste/core/utils/strings.dart';
 import 'package:logeste/splash_screens/presentation/pages/splash_screen.dart';
 
-import 'home_page/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

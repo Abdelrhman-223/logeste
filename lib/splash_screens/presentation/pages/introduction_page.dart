@@ -40,36 +40,36 @@ class _IntroductionPageState extends State<IntroductionPage> {
   Widget build(BuildContext context) {
     return AppScaffold(
       hasDrawer: false,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                AppStrings.welcomeText,
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontSize: AppFonts.myH1,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.introPageTextColor,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              AppStrings.welcomeText,
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: (MediaQuery.of(context).size.height) / 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.introPageTextColor,
               ),
-              SizedBox(
-                height: 450,
-                child: PageView(
-                  reverse: true,
-                  controller: pageController,
-                  onPageChanged: (index) {
-                    setState(() {
-                      //add 1 on index to make navigator work.
-                      pageIndex = index + 1;
-                    });
-                  },
-                  children: sliderPages,
-                ),
+            ),
+            Expanded(
+              child: PageView(
+                reverse: true,
+                controller: pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    //add 1 on index to make navigator work.
+                    pageIndex = index + 1;
+                  });
+                },
+                children: sliderPages,
               ),
-              Row(
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 50),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   //Next page Arrow
@@ -135,9 +135,9 @@ class _IntroductionPageState extends State<IntroductionPage> {
                           ),
                         ),
                 ],
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

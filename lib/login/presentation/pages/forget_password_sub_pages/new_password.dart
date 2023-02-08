@@ -1,100 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:logeste/core/components/custom_text_field.dart';
+import 'package:logeste/login/presentation/pages/forget_password_sub_pages/new_password_screen.dart';
 
-import '../../../../core/components/custom_button.dart';
-import '../../../../core/utils/colors.dart';
-import '../../../../core/utils/fonts.dart';
-import '../../../../core/utils/icons.dart';
-import '../../../../core/utils/strings.dart';
-
-class NewPassword extends StatefulWidget {
-  const NewPassword({Key? key}) : super(key: key);
-
-  @override
-  State<NewPassword> createState() => _NewPasswordState();
-}
-
-class _NewPasswordState extends State<NewPassword> {
-  bool notMatches = false;
-  TextEditingController newPassword = TextEditingController();
-
-  TextEditingController repeatNewPassword = TextEditingController();
+class NewPassword extends StatelessWidget {
+  NewPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          color: AppColors.loginTabsBackgroundColor,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-            child: Text(
-              AppStrings.newPasswordPageTitle,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AppColors.appTextColorBlack,
-                fontSize: AppFonts.myH5,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-          color: AppColors.loginTabsBackgroundColor,
-          //height: 580,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  customTextField(
-                    textEditingController: newPassword,
-                    hintText: AppStrings.newPasswordFieldHint,
-                    iconPath: IconPaths.lock,
-                    isPasswordField: true,
-                  ),
-                  customTextField(
-                    textEditingController: repeatNewPassword,
-                    hintText: AppStrings.repeatNewPasswordFieldHint,
-                    iconPath: IconPaths.lock,
-                    isPasswordField: true,
-                  ),
-                  if (notMatches)
-                    Text(
-                      AppStrings.passwordsNotMatches,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: AppColors.appTextRedColor,
-                        fontSize: AppFonts.myH6,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                ],
-              ),
-              /*Padding(
-                padding: const EdgeInsets.only(bottom: 50),
-                child: CustomButton(
-                  buttonText: AppStrings.forgetPassPageButtonText,
-                  buttonColor: AppColors.appIconsColor,
-                  buttonFunc: () {
-                    setState(() {
-                      if (newPassword.text != repeatNewPassword.text) {
-                        notMatches = true;
-                      } else {
-                        notMatches = false;
-                      }
-                    });
-                  },
-                  buttonTextColor: AppColors.appTextColorWhite,
-                ),
-              ),*/
-            ],
-          ),
-        )
-      ],
-    );
+    return NewPasswordScreen();
   }
 }

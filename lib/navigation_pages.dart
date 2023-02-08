@@ -74,7 +74,7 @@ class NavigationPages extends StatelessWidget {
                             pageIndex = 0;
                           });
                         },
-                        child: bottomNavigatorBarItem(
+                        child: BottomNavigatorBarItem(
                           itemIcon: IconPaths.shipments,
                           itemLabel: AppStrings.shipmentsItemLabel,
                           itemColor: (pageIndex == 0)
@@ -88,7 +88,7 @@ class NavigationPages extends StatelessWidget {
                             pageIndex = 1;
                           });
                         },
-                        child: bottomNavigatorBarItem(
+                        child: BottomNavigatorBarItem(
                           itemIcon: IconPaths.shoppingBag,
                           itemLabel: AppStrings.tasksItemLabel,
                           itemColor: (pageIndex == 1)
@@ -102,7 +102,7 @@ class NavigationPages extends StatelessWidget {
                             pageIndex = 2;
                           });
                         },
-                        child: bottomNavigatorBarItem(
+                        child: BottomNavigatorBarItem(
                           itemIcon: (pageIndex == 2)
                               ? IconPaths.directArrow
                               : IconPaths.directArrowOutline,
@@ -117,7 +117,7 @@ class NavigationPages extends StatelessWidget {
                             pageIndex = 3;
                           });
                         },
-                        child: bottomNavigatorBarItem(
+                        child: BottomNavigatorBarItem(
                           itemIcon: IconPaths.bills,
                           itemLabel: AppStrings.billsItemLabel,
                           itemColor: (pageIndex == 3)
@@ -131,7 +131,7 @@ class NavigationPages extends StatelessWidget {
                             pageIndex = 4;
                           });
                         },
-                        child: bottomNavigatorBarItem(
+                        child: BottomNavigatorBarItem(
                           itemIcon: IconPaths.notification,
                           itemLabel: AppStrings.notificationsItemLabel,
                           itemColor: (pageIndex == 4)

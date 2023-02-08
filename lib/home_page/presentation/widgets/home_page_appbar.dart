@@ -58,7 +58,7 @@ PreferredSizeWidget homePageAppbar() {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: AppStrings.reasons.length,
                             itemBuilder: (context, index) {
-                              return homePageSheetReasonField(
+                              return HomePageSheetReasonField(
                                 reason: AppStrings.reasons[index],
                                 iconColor: AppColors.appIconLightGreyColor2,
                                 textColor: AppColors.appTextThirdColor,
@@ -66,7 +66,7 @@ PreferredSizeWidget homePageAppbar() {
                               );
                             },
                           ),
-                          customButton(
+                          CustomButton(
                             fullBorderRadius: true,
                             buttonColor: AppColors.appButtonRedColor,
                             buttonText: AppStrings.homePageStopConnection,

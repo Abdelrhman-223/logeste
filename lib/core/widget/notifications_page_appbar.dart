@@ -7,7 +7,6 @@ import 'package:logeste/core/utils/strings.dart';
 import '../../../core/widget/common_appbar.dart';
 
 PreferredSizeWidget notificationsPageAppbar() {
-  bool userConnected = true;
   return commonAppBar(
     title: const Text("الاشعارات"),
     appbarColor: AppColors.appBackgroundColorBlack,

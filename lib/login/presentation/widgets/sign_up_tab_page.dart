@@ -38,38 +38,38 @@ class SignUpTabPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 (isCaptain)
-                    ? customTextField(
+                    ? CustomTextField(
                   textEditingController: userNameController,
                   hintText: AppStrings.userNameFieldHint,
                   iconPath: IconPaths.profile,
                 )
                     : Column(
                   children: [
-                    customTextField(
+                    CustomTextField(
                       textEditingController: agentNameController,
                       hintText: AppStrings.agentNameFieldHint,
                       iconPath: IconPaths.buildings,
                     ),
-                    customTextField(
+                    CustomTextField(
                       textEditingController: managerNameController,
                       hintText: AppStrings.managerNameFieldHint,
                       iconPath: IconPaths.profile,
                     )
                   ],
                 ),
-                customTextField(
+                CustomTextField(
                   textEditingController: phoneNumberController,
                   hintText: AppStrings.phoneFieldHint,
                   iconPath: IconPaths.call,
                   isPhoneField: true,
                 ),
-                customTextField(
+                CustomTextField(
                   textEditingController: emailController,
                   hintText: AppStrings.emailFieldHint,
                   iconPath: IconPaths.email,
                   isEmailField: true,
                 ),
-                customTextField(
+                CustomTextField(
                   textEditingController: passwordController,
                   hintText: AppStrings.passwordFieldHint,
                   iconPath: IconPaths.lock,
@@ -112,7 +112,7 @@ class SignUpTabPage extends StatelessWidget {
             ),
             Column(
               children: [
-                customButton(
+                CustomButton(
                   buttonText: (isCaptain)?buttonText:AppStrings.signUpPageButtonText,
                   buttonColor: AppColors.appIconsColor,
                   buttonFunc: () {

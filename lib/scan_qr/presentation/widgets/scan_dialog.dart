@@ -33,20 +33,17 @@ Future scanDialog(context) {
               thickness: 2,
               color: AppColors.appIconLightGreyColor2,
             ),
-            scanButtonBox(
-              context,
+            ScanButtonBox(
               qrPageType: "search",
               buttonIcon: IconPaths.search,
               buttonText: AppStrings.homePageStopScanSearchButton,
             ),
-            scanButtonBox(
-              context,
+            ScanButtonBox(
               qrPageType: "receive",
               buttonIcon: IconPaths.receiveArrow,
               buttonText: AppStrings.homePageStopScanReceiveButton,
             ),
-            scanButtonBox(
-              context,
+            ScanButtonBox(
               qrPageType: "pick",
               buttonIcon: IconPaths.pick,
               buttonText: AppStrings.homePageStopScanPickButton,

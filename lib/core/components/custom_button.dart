@@ -1,36 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:logeste/core/utils/fonts.dart';
 
-Widget customButton({
+class CustomButton extends StatelessWidget {
+  final String buttonText;
+  final Color buttonColor, buttonTextColor;
+  final dynamic buttonFunc;
+  final double buttonWidth;
+  final double borderRadius;
+  final bool fullBorderRadius;
 
-  required String buttonText,
-  required Color buttonColor,
-  required Color buttonTextColor,
-  required dynamic buttonFunc,
-  double buttonWidth = double.infinity,
-  double borderRadius = 12,
-  bool fullBorderRadius = false,
-}) {
+  CustomButton({
+    Key? key,
+    required this.buttonText,
+    required this.buttonColor,
+    required this.buttonTextColor,
+    this.buttonFunc,
+    this.buttonWidth = double.infinity,
+    this.borderRadius = 12,
+    this.fullBorderRadius = false,
+  }) : super(key: key);
+
   double buttonHeight = 60;
-  return GestureDetector(
-    onTap: buttonFunc,
-    child: Container(
-      height: buttonHeight,
-      width: buttonWidth,
-      alignment: Alignment.center,
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        color: buttonColor,
-        borderRadius: BorderRadius.circular((fullBorderRadius)? buttonHeight/2 :borderRadius),
-      ),
-      child: Text(
-        buttonText,
-        style: TextStyle(
-            color: buttonTextColor,
-            fontSize: AppFonts.myP1
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: buttonFunc,
+      child: Container(
+        height: buttonHeight,
+        width: buttonWidth,
+        alignment: Alignment.center,
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        decoration: BoxDecoration(
+          color: buttonColor,
+          borderRadius: BorderRadius.circular(
+              (fullBorderRadius) ? buttonHeight / 2 : borderRadius),
+        ),
+        child: Text(
+          buttonText,
+          style: TextStyle(color: buttonTextColor, fontSize: AppFonts.myP1),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

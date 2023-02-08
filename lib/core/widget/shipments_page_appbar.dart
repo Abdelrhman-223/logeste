@@ -7,7 +7,6 @@ import 'package:logeste/core/utils/strings.dart';
 import '../../../core/widget/common_appbar.dart';
 
 PreferredSizeWidget shipmentsPageAppbar() {
-  bool userConnected = true;
   return commonAppBar(
     title: const Text("الشحنات"),
     appbarColor: AppColors.appBackgroundColorBlack,
